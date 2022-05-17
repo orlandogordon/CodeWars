@@ -18,6 +18,7 @@ function digPow(n, p) {
 console.log(digPow(81, 1));
 console.log(digPow(92, 1));
 console.log(digPow(46288, 3));
+
 //  Best practice
 function digPow2(n, p) {
   var x = String(n)

@@ -1,3 +1,17 @@
+// ------------  MAY 17TH   ------------
+// function arrayDiff(a, b) {
+//   return a.filter((el) => !b.find((el2) => el === el2));
+// }
+
+// console.log(arrayDiff([1, 2, 3, 4], [1, 2]));
+
+// let a = [1, 2, 3, 4, 5];
+// let b = [];
+
+// c = a.filter((el) => !b.find((el2) => el === el2));
+// console.log(c);
+
+////////////////////////////////////////
 // ------------  MAY 16TH   ------------
 // let x = 150;
 // x = `${x}`;
