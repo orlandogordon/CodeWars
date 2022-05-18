@@ -1,3 +1,16 @@
+////////////////////////////////////////
+// ------------  MAY 18TH   ------------
+function spinWords(string) {
+  //TODO Have fun :)
+  return string
+    .split(" ")
+    .map((el) => (el.length >= 5 ? el.split("").reverse().join("") : el))
+    .join(" ");
+}
+
+console.log(spinWords("Hey fellow warriors"));
+
+////////////////////////////////////////
 // ------------  MAY 17TH   ------------
 // function arrayDiff(a, b) {
 //   return a.filter((el) => !b.find((el2) => el === el2));
