@@ -1,25 +1,51 @@
 ////////////////////////////////////////
+// ------------  MAY 22nd   ------------
+function duplicateEncode(word) {
+  // ...
+  word = word.toLowerCase();
+  wordArr = word.split("");
+  resultArr = word.toLowerCase().split("");
+  // console.log(word[0], wordArr[0]);
+  for (let i = 0; i < wordArr.length; i++) {
+    wordArr[i] = undefined;
+    if (wordArr.includes(word[i])) {
+      wordArr[i] = word[i];
+      resultArr[i] = ")";
+    } else {
+      wordArr[i] = word[i];
+      resultArr[i] = "(";
+    }
+  }
+  return resultArr.join("");
+}
+console.log(duplicateEncode("din"));
+console.log(duplicateEncode("recede"));
+console.log("G)m)))O))T)))))b(xJ");
+console.log(duplicateEncode("G)m)))O))T)))))b(xJ"));
+console.log("()()))())()))))((((");
+
+////////////////////////////////////////
 // ------------  MAY 21st   ------------
 
-function isPrime(num) {
-  //TODO
-  lastDigit = num % 10;
-  if (num === 2 || num === 3 || num === 5 || num === 7) return true;
-  return (
-    num > 1 &&
-    lastDigit !== 0 &&
-    lastDigit !== 2 &&
-    lastDigit !== 4 &&
-    lastDigit !== 6 &&
-    lastDigit !== 8 &&
-    `${num}`.split("").reduce(function (total, num) {
-      console.log(+total);
-      return total + num;
-    }) %
-      3 !==
-      0
-  );
-}
+// function isPrime(num) {
+//   //TODO
+//   lastDigit = num % 10;
+//   if (num === 2 || num === 3 || num === 5 || num === 7) return true;
+//   return (
+//     num > 1 &&
+//     lastDigit !== 0 &&
+//     lastDigit !== 2 &&
+//     lastDigit !== 4 &&
+//     lastDigit !== 6 &&
+//     lastDigit !== 8 &&
+//     `${num}`.split("").reduce(function (total, num) {
+//       console.log(+total);
+//       return total + num;
+//     }) %
+//       3 !==
+//       0
+//   );
+// }
 
 // console.log(isPrime(5));
 // console.log(isPrime(-5));
