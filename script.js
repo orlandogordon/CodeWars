@@ -1,4 +1,24 @@
 ////////////////////////////////////////
+// ------------  MAY 24th   ------------
+// function solution(str) {
+//   strArr = str.split("");
+//   for (let i = 0; i < strArr.length; i++) {
+//     if (strArr[i + 1] === undefined) strArr[i] = strArr[i] + "_";
+//     else {
+//       strArr[i] = strArr[i] + strArr[i + 1];
+//       strArr.splice(i + 1, 1);
+//     }
+//   }
+//   return strArr;
+// }
+
+// console.log(solution("abc"));
+// console.log(solution("abcdef"));
+
+// let arr2 = [0, 1, 2, 3];
+// console.log(arr2[4] === undefined);
+
+////////////////////////////////////////
 // ------------  MAY 23rd   ------------
 // function rgb(r, g, b) {
 //   // complete this function
