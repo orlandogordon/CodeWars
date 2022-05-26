@@ -1,4 +1,27 @@
 ////////////////////////////////////////
+// ------------  MAY 25th   ------------
+var uniqueInOrder = function (iterable) {
+  //your code here - remember iterable can be a string or an array
+  if (!Array.isArray(iterable)) {
+    iterable = iterable.split("");
+  }
+  // for (let i = 0; i < iterable.length; i++) {
+  //   if (iterable[i] === iterable[i + 1] || iterable[i] === iterable[i - 1]) {
+  //     iterable.splice(i, 1);
+  //     i--;
+  //   }
+  // }
+  // return iterable;
+  return iterable.filter((el, index, arr) => el !== arr[index + 1]);
+};
+
+console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+console.log(uniqueInOrder("ABBCcAD"));
+console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+// console.log(typeof ["a", "b", "c"] == "string");
+
+////////////////////////////////////////
 // ------------  MAY 24th   ------------
 // function solution(str) {
 //   strArr = str.split("");
