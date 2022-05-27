@@ -1,23 +1,49 @@
 ////////////////////////////////////////
-// ------------  MAY 25th   ------------
-var uniqueInOrder = function (iterable) {
-  //your code here - remember iterable can be a string or an array
-  if (!Array.isArray(iterable)) {
-    iterable = iterable.split("");
-  }
-  // for (let i = 0; i < iterable.length; i++) {
-  //   if (iterable[i] === iterable[i + 1] || iterable[i] === iterable[i - 1]) {
-  //     iterable.splice(i, 1);
-  //     i--;
-  //   }
-  // }
-  // return iterable;
-  return iterable.filter((el, index, arr) => el !== arr[index + 1]);
-};
+// ------------  MAY 27th   ------------
+////////////////////////////////////////
+// ------------  MAY 26th   ------------
+function solution(input, markers) {
+  input = input.split("\n");
+  return input
+    .map((el) => {
+      markers.forEach(
+        (mark) =>
+          (el = el.indexOf(mark) === -1 ? el : el.slice(0, el.indexOf(mark)))
+      );
+      return el.endsWith(" ") ? el.slice(0, -1) : el;
+    })
+    .join("\n");
+}
 
-console.log(uniqueInOrder("AAAABBBCCDAABBB"));
-console.log(uniqueInOrder("ABBCcAD"));
-console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+// console.log(
+//   solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+// );
+console.log(
+  solution("apples, plums % and bananas\npears\noranges !applesauce", [
+    "%",
+    "!",
+  ])
+);
+////////////////////////////////////////
+// ------------  MAY 25th   ------------
+// var uniqueInOrder = function (iterable) {
+//   //your code here - remember iterable can be a string or an array
+//   if (!Array.isArray(iterable)) {
+//     iterable = iterable.split("");
+//   }
+// for (let i = 0; i < iterable.length; i++) {
+//   if (iterable[i] === iterable[i + 1] || iterable[i] === iterable[i - 1]) {
+//     iterable.splice(i, 1);
+//     i--;
+//   }
+// }
+// return iterable;
+//   return iterable.filter((el, index, arr) => el !== arr[index + 1]);
+// };
+
+// console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+// console.log(uniqueInOrder("ABBCcAD"));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
 
 // console.log(typeof ["a", "b", "c"] == "string");
 
