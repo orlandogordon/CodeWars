@@ -1,29 +1,50 @@
 ////////////////////////////////////////
-// ------------  MAY 27th   ------------
-////////////////////////////////////////
-// ------------  MAY 26th   ------------
-function solution(input, markers) {
-  input = input.split("\n");
-  return input
-    .map((el) => {
-      markers.forEach(
-        (mark) =>
-          (el = el.indexOf(mark) === -1 ? el : el.slice(0, el.indexOf(mark)))
-      );
-      return el.endsWith(" ") ? el.slice(0, -1) : el;
-    })
-    .join("\n");
-}
-
-// console.log(
-//   solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
-// );
+// ------------  MAY 28th   ------------
+const snail = function (array) {
+  // enjoy
+  const n = array.length - 1;
+  const array2 = array[0].map((el, index, arr) => (index < n ? el : null));
+  array2.pop();
+  console.log(array, array2);
+  array.forEach((el) => array2.push(el[n]));
+  // for (let a = n - 1; a > 0; a--) {
+  //   for (let i = 1; i < n; i++) {
+  //     array2.push(array[i][a]);
+  //   }
+  // }
+  return array2;
+};
 console.log(
-  solution("apples, plums % and bananas\npears\noranges !applesauce", [
-    "%",
-    "!",
+  snail([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
   ])
 );
+////////////////////////////////////////
+// ------------  MAY 26th   ------------
+// function solution(input, markers) {
+//   input = input.split("\n");
+//   return input
+//     .map((el) => {
+//       markers.forEach(
+//         (mark) =>
+//           (el = el.indexOf(mark) === -1 ? el : el.slice(0, el.indexOf(mark)))
+//       );
+//       return el.endsWith(" ") ? el.slice(0, -1) : el;
+//     })
+//     .join("\n");
+// }
+
+// // console.log(
+// //   solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+// // );
+// console.log(
+//   solution("apples, plums % and bananas\npears\noranges !applesauce", [
+//     "%",
+//     "!",
+//   ])
+// );
 ////////////////////////////////////////
 // ------------  MAY 25th   ------------
 // var uniqueInOrder = function (iterable) {
