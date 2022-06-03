@@ -1,22 +1,32 @@
 ////////////////////////////////////////
-// ------------  June 1st   ------------
-function even_or_odd(number) {
-  return number % 2 === 0 ? "Even" : "Odd";
+// ------------  June 2nd   ------------
+function removeEveryOther(arr) {
+  //your code here
+  return arr.filter((el, index, arr) => index % 2 === 0);
 }
 
-console.log(even_or_odd(2));
-console.log(even_or_odd(5));
-console.log(even_or_odd(34));
+console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"]));
+console.log(removeEveryOther([["Goodbye"], { Great: "Job" }]));
+
+////////////////////////////////////////
+// ------------  June 1st   ------------
+// function even_or_odd(number) {
+//   return number % 2 === 0 ? "Even" : "Odd";
+// }
+
+// console.log(even_or_odd(2));
+// console.log(even_or_odd(5));
+// console.log(even_or_odd(34));
 ////////////////////////////////////////
 // ------------  MAY 31st   ------------
-function dblLinear(n) {
-  let answer = [1];
-  for (let i = 1; i <= n; i++) {
-    answer.push(3 * i + 1);
-    answer.push(2 * i + 1);
-  }
-  return answer;
-}
+// function dblLinear(n) {
+//   let answer = [1];
+//   for (let i = 1; i <= n; i++) {
+//     answer.push(3 * i + 1);
+//     answer.push(2 * i + 1);
+//   }
+//   return answer;
+// }
 
 // console.log(dblLinear(1));
 // console.log(dblLinear(2));
@@ -27,20 +37,20 @@ function dblLinear(n) {
 
 ////////////////////////////////////////
 // ------------  MAY 28th   ------------
-const snail = function (array) {
-  // enjoy
-  const n = array.length - 1;
-  const array2 = array[0].map((el, index, arr) => (index < n ? el : null));
-  array2.pop();
-  console.log(array, array2);
-  array.forEach((el) => array2.push(el[n]));
-  // for (let a = n - 1; a > 0; a--) {
-  //   for (let i = 1; i < n; i++) {
-  //     array2.push(array[i][a]);
-  //   }
-  // }
-  return array2;
-};
+// const snail = function (array) {
+//   // enjoy
+//   const n = array.length - 1;
+//   const array2 = array[0].map((el, index, arr) => (index < n ? el : null));
+//   array2.pop();
+//   console.log(array, array2);
+//   array.forEach((el) => array2.push(el[n]));
+//   // for (let a = n - 1; a > 0; a--) {
+//   //   for (let i = 1; i < n; i++) {
+//   //     array2.push(array[i][a]);
+//   //   }
+//   // }
+//   return array2;
+// };
 // console.log(
 //   snail([
 //     [1, 2, 3],
