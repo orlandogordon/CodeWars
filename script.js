@@ -1,12 +1,35 @@
 ////////////////////////////////////////
-// ------------  June 2nd   ------------
-function removeEveryOther(arr) {
-  //your code here
-  return arr.filter((el, index, arr) => index % 2 === 0);
-}
+// ------------  June 4th   ------------
 
-console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"]));
-console.log(removeEveryOther([["Goodbye"], { Great: "Job" }]));
+////////////////////////////////////////
+// ------------  June 3rd   ------------
+// function takeWhile(arr, pred) {
+//   // Your code here
+
+//   let x = arr.findIndex((el) => !pred(el));
+//   if (x === -1) return arr;
+//   return arr.splice(0, x);
+// }
+
+// console.log(takeWhile([2, 4, 10, 100, 64, 78, 92], isEven));
+
+// // Predicate Functions
+// function isEven(num) {
+//   return num % 2 === 0;
+// }
+
+// function isOdd(num) {
+//   return num % 2 !== 0;
+// }
+////////////////////////////////////////
+// ------------  June 2nd   ------------
+// function removeEveryOther(arr) {
+//   //your code here
+//   return arr.filter((el, index, arr) => index % 2 === 0);
+// }
+
+// console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"]));
+// console.log(removeEveryOther([["Goodbye"], { Great: "Job" }]));
 
 ////////////////////////////////////////
 // ------------  June 1st   ------------
