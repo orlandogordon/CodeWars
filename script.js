@@ -1,10 +1,22 @@
 ////////////////////////////////////////
-// ------------  June 8th   ------------
-function stringToArray(string) {
-  return string.split(" ");
-}
+// ------------  June 9th   ------------
+const reverseSeq = (n) => {
+  let arr = [];
+  while (n > 0) {
+    arr.push(n);
+    n--;
+  }
+  return arr;
+};
 
-console.log(stringToArray("I love arrays they are my favorite"));
+console.log(reverseSeq(5));
+////////////////////////////////////////
+// ------------  June 8th   ------------
+// function stringToArray(string) {
+//   return string.split(" ");
+// }
+
+// console.log(stringToArray("I love arrays they are my favorite"));
 
 ////////////////////////////////////////
 // ------------  June 7th   ------------
