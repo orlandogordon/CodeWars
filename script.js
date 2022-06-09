@@ -1,10 +1,18 @@
 ////////////////////////////////////////
-// ------------  June 7th   ------------
-function noSpace(x) {
-  return x.split(" ").join("");
+// ------------  June 8th   ------------
+function stringToArray(string) {
+  return string.split(" ");
 }
 
-console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
+console.log(stringToArray("I love arrays they are my favorite"));
+
+////////////////////////////////////////
+// ------------  June 7th   ------------
+// function noSpace(x) {
+//   return x.split(" ").join("");
+// }
+
+// console.log(noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"));
 ////////////////////////////////////////
 // ------------  June 3rd   ------------
 // function takeWhile(arr, pred) {
