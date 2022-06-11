@@ -1,24 +1,43 @@
 ////////////////////////////////////////
-// ------------  June 10th   ------------
-function solution(str, ending) {
-  // TODO: complete
-  return str.endsWith(ending);
+// ------------  June 12th   ------------
+////////////////////////////////////////
+// ------------  June 11th   ------------
+function twoSum(numbers, target) {
+  // ...
+  let answer = [];
+  let holder;
+  for (let i = 0; i < numbers.length; i++) {
+    holder = numbers.findIndex((el) => numbers[i] + el === target);
+    if (holder !== -1 && holder !== i) {
+      answer.push(i, holder);
+      i = numbers.length;
+    }
+  }
+  return answer;
 }
 
-console.log(solution("abc", "bc"));
-console.log(solution("abc", "d"));
+console.log(twoSum([1, 2, 3], 4));
+////////////////////////////////////////
+// ------------  June 10th   ------------
+// function solution(str, ending) {
+//   // TODO: complete
+//   return str.endsWith(ending);
+// }
+
+// console.log(solution("abc", "bc"));
+// console.log(solution("abc", "d"));
 ////////////////////////////////////////
 // ------------  June 9th   ------------
-const reverseSeq = (n) => {
-  let arr = [];
-  while (n > 0) {
-    arr.push(n);
-    n--;
-  }
-  return arr;
-};
+// const reverseSeq = (n) => {
+//   let arr = [];
+//   while (n > 0) {
+//     arr.push(n);
+//     n--;
+//   }
+//   return arr;
+// };
 
-console.log(reverseSeq(5));
+// console.log(reverseSeq(5));
 ////////////////////////////////////////
 // ------------  June 8th   ------------
 // function stringToArray(string) {
