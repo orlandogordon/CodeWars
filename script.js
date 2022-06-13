@@ -1,8 +1,6 @@
 ////////////////////////////////////////
 // ------------  June 12th   ------------
-////////////////////////////////////////
-// ------------  June 11th   ------------
-function twoSum(numbers, target) {
+function evenNum(numbers, target) {
   // ...
   let answer = [];
   let holder;
@@ -17,6 +15,23 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum([1, 2, 3], 4));
+////////////////////////////////////////
+// ------------  June 11th   ------------
+// function twoSum(numbers, target) {
+//   // ...
+//   let answer = [];
+//   let holder;
+//   for (let i = 0; i < numbers.length; i++) {
+//     holder = numbers.findIndex((el) => numbers[i] + el === target);
+//     if (holder !== -1 && holder !== i) {
+//       answer.push(i, holder);
+//       i = numbers.length;
+//     }
+//   }
+//   return answer;
+// }
+
+// console.log(twoSum([1, 2, 3], 4));
 ////////////////////////////////////////
 // ------------  June 10th   ------------
 // function solution(str, ending) {
