@@ -1,11 +1,36 @@
 ////////////////////////////////////////
+// ------------  June 15th   ------------
+////////////////////////////////////////
+// ------------  June 14th   ------------
+// function stringSuffix(s) {
+//   // Complete
+//   let suffix = s.split("").slice(1);
+//   const iterations = suffix.length;
+//   let score = s.length;
+//   s = s.split("");
+//   for (let i = 0; i <= iterations; i++) {
+//     let a = 0;
+//     while (s[a] === suffix[a]) {
+//       score++;
+//       a++;
+//     }
+//     suffix.shift();
+//   }
+//   return score;
+// }
+// console.log(stringSuffix("aa"), 3);
+// console.log(stringSuffix("abc"), 3);
+// console.log(stringSuffix("ababaa"), 11);
+// console.log(stringSuffix("apple"), 5);
+// console.log(stringSuffix("aaaa"), 10);
+////////////////////////////////////////
 // ------------  June 12th   ------------
-function evenNumbers(array, number) {
-  // good luck
-  return array.filter((el) => el % 2 === 0).slice(-number);
-}
+// function evenNumbers(array, number) {
+//   // good luck
+//   return array.filter((el) => el % 2 === 0).slice(-number);
+// }
 
-console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+// console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 ////////////////////////////////////////
 // ------------  June 11th   ------------
 // function twoSum(numbers, target) {
