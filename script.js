@@ -1,20 +1,11 @@
 ////////////////////////////////////////
 // ------------  June 12th   ------------
-function evenNum(numbers, target) {
-  // ...
-  let answer = [];
-  let holder;
-  for (let i = 0; i < numbers.length; i++) {
-    holder = numbers.findIndex((el) => numbers[i] + el === target);
-    if (holder !== -1 && holder !== i) {
-      answer.push(i, holder);
-      i = numbers.length;
-    }
-  }
-  return answer;
+function evenNumbers(array, number) {
+  // good luck
+  return array.filter((el) => el % 2 === 0).slice(-number);
 }
 
-console.log(twoSum([1, 2, 3], 4));
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 ////////////////////////////////////////
 // ------------  June 11th   ------------
 // function twoSum(numbers, target) {
