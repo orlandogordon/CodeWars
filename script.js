@@ -1,54 +1,85 @@
 ////////////////////////////////////////
-// ------------  June 16th   ------------
-function topThreeWords(text) {
-  // Initialize counter variable and clean up the text string. Create copy of text string with any special characters removed
-  let counter = [];
-  text = text
-    .replace(/[&\/\\#,+()$~%.":*?<>{}]/g, " ")
-    .split(" ")
-    .filter((el) => el !== "");
-  copy = text.sort().filter(function (el, index, ary) {
-    return !index || el != ary[index - 1];
-  });
-
-  // If there are three or less different words in the string, return the coppied array as is
-  if (text[0] === undefined || text.length <= 3) return copy;
-
-  // Count the number of times each word appears in the original string
-  for (let i = 0; i < copy.length; i++) {
-    counter.push(text.filter((el) => el === copy[i]).length.toString());
+// ------------  June 18th   ------------
+function productFib(prod) {
+  // ...
+  let fib = [1, 0];
+  let answer = [];
+  while (true) {
+    if (fib[0] * fib[1] === prod) {
+      answer.push(fib[1]);
+      answer.push(fib[0]);
+      answer.push(true);
+      break;
+    } else if (fib[0] * fib[1] > prod) {
+      answer.push(fib[1]);
+      answer.push(fib[0]);
+      answer.push(false);
+      break;
+    } else {
+      fib.unshift(fib[0] + fib[1]);
+    }
   }
-
-  // Sort the "unique words" coppied version of the string based on the mathcing indicies in the counter array
-  let indicies = Array.from(counter.keys());
-  indicies.sort((a, b) => counter[a].localeCompare(counter[b]));
-  let sortedCopy = indicies.map((i) => copy[i]);
-
-  // Return the three words that occured most based on the counter we established earlier
-  return sortedCopy.reverse().slice(0, 3);
+  return answer;
 }
 
-console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e"), [
-  "e",
-  "d",
-  "a",
-]);
-console.log(topThreeWords("  //wont won't won't "), ["won't", "wont"]);
-console.log(topThreeWords("  , e   .. "), ["e"]);
-console.log(topThreeWords(""));
-console.log(
-  topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"),
-  ["e", "ddd", "aa"]
-);
-console.log(
-  topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
-mind, there lived not long since one of those gentlemen that keep a lance
-in the lance-rack, an old buckler, a lean hack, and a greyhound for
-coursing. An olla of rather more beef than mutton, a salad on most
-nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
-on Sundays, made away with three-quarters of his income.`),
-  ["a", "of", "on"]
-);
+console.log(productFib(4895), [55, 89, true]);
+
+console.log(productFib(74049690), [6765, 10946, true]);
+
+console.log(productFib(193864606), [10946, 17711, true]);
+
+console.log(productFib(602070), [610, 987, true]);
+////////////////////////////////////////
+// ------------  June 16th   ------------
+// function topThreeWords(text) {
+//   // Initialize counter variable and clean up the text string. Create copy of text string with any special characters removed
+//   let counter = [];
+//   text = text
+//     .replace(/[&\/\\#,+()$~%.":*?<>{}]/g, " ")
+//     .split(" ")
+//     .filter((el) => el !== "");
+//   copy = text.sort().filter(function (el, index, ary) {
+//     return !index || el != ary[index - 1];
+//   });
+
+//   // If there are three or less different words in the string, return the coppied array as is
+//   if (text[0] === undefined || text.length <= 3) return copy;
+
+//   // Count the number of times each word appears in the original string
+//   for (let i = 0; i < copy.length; i++) {
+//     counter.push(text.filter((el) => el === copy[i]).length.toString());
+//   }
+
+//   // Sort the "unique words" coppied version of the string based on the mathcing indicies in the counter array
+//   let indicies = Array.from(counter.keys());
+//   indicies.sort((a, b) => counter[a].localeCompare(counter[b]));
+//   let sortedCopy = indicies.map((i) => copy[i]);
+
+//   // Return the three words that occured most based on the counter we established earlier
+//   return sortedCopy.reverse().slice(0, 3);
+// }
+
+// console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e"), [
+//   "e",
+//   "d",
+//   "a",
+// ]);
+// console.log(topThreeWords("  //wont won't won't "), ["won't", "wont"]);
+// console.log(topThreeWords("  , e   .. "), ["e"]);
+// console.log(topThreeWords(""));
+// console.log(
+//   topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e"),
+//   ["e", "ddd", "aa"]
+// );
+// console.log(
+//   topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
+// mind, there lived not long since one of those gentlemen that keep a lance
+// in the lance-rack, an old buckler, a lean hack, and a greyhound for
+// coursing. An olla of rather more beef than mutton, a salad on most
+// nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
+// on Sundays, made away with three-quarters of his income.`),
+//   ["a", "of", "on"]
+// );
 ////////////////////////////////////////
 // ------------  June 14th   ------------
 // function stringSuffix(s) {
