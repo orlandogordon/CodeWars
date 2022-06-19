@@ -1,34 +1,64 @@
 ////////////////////////////////////////
-// ------------  June 18th   ------------
-function productFib(prod) {
-  // ...
-  let fib = [1, 0];
-  let answer = [];
-  while (true) {
-    if (fib[0] * fib[1] === prod) {
-      answer.push(fib[1]);
-      answer.push(fib[0]);
-      answer.push(true);
-      break;
-    } else if (fib[0] * fib[1] > prod) {
-      answer.push(fib[1]);
-      answer.push(fib[0]);
-      answer.push(false);
-      break;
-    } else {
-      fib.unshift(fib[0] + fib[1]);
-    }
+// ------------  June 19th   ------------
+function validParentheses(parens) {
+  // your code here ..
+  parens = parens.split("");
+
+  let left = parens.filter((el) => el === "(");
+  let right = parens.filter((el) => el === ")");
+
+  if (left.length !== right.length) return false;
+
+  if (parens.indexOf("(") > parens.indexOf(")")) return false;
+  if (parens.reverse().indexOf(")") > parens.reverse().indexOf("("))
+    return false;
+
+  while (parens[0] === "(") {
+    parens = parens.slice(1);
+    parens.splice(parens.indexOf(")"), 1);
+    console.log(parens.join(""), parens.length);
   }
-  return answer;
+  if (parens.length > 0) return false;
+
+  return true;
 }
 
-console.log(productFib(4895), [55, 89, true]);
+// console.log(validParentheses("("), false);
+// console.log(validParentheses("(())((()())())"), true);
+// console.log(validParentheses("())"), true);
+// console.log(validParentheses(")()()()("), false);
+console.log(validParentheses("())(()"), false);
+////////////////////////////////////////
+// ------------  June 18th   ------------
+// function productFib(prod) {
+//   // ...
+//   let fib = [1, 0];
+//   let answer = [];
+//   while (true) {
+//     if (fib[0] * fib[1] === prod) {
+//       answer.push(fib[1]);
+//       answer.push(fib[0]);
+//       answer.push(true);
+//       break;
+//     } else if (fib[0] * fib[1] > prod) {
+//       answer.push(fib[1]);
+//       answer.push(fib[0]);
+//       answer.push(false);
+//       break;
+//     } else {
+//       fib.unshift(fib[0] + fib[1]);
+//     }
+//   }
+//   return answer;
+// }
 
-console.log(productFib(74049690), [6765, 10946, true]);
+// console.log(productFib(4895), [55, 89, true]);
 
-console.log(productFib(193864606), [10946, 17711, true]);
+// console.log(productFib(74049690), [6765, 10946, true]);
 
-console.log(productFib(602070), [610, 987, true]);
+// console.log(productFib(193864606), [10946, 17711, true]);
+
+// console.log(productFib(602070), [610, 987, true]);
 ////////////////////////////////////////
 // ------------  June 16th   ------------
 // function topThreeWords(text) {
