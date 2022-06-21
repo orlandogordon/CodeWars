@@ -1,33 +1,90 @@
 ////////////////////////////////////////
-// ------------  June 19th   ------------
-function validParentheses(parens) {
-  // your code here ..
-  parens = parens.split("");
+// ------------  June 21st   ------------
+function getPINs(observed) {
+  // TODO: This is your job, detective!
+  let options = []
+  let adjacentDigits = {}
+  let digit
+  observed = observed.split('').map(el => +el);
+  observed.forEach(el => adjacentDigits[el] = []);
+  for (let i = 0; i < Object.keys(adjacentDigits).length; i++) {
+    digit = +Object.keys(adjacentDigits)[i];
 
-  let left = parens.filter((el) => el === "(");
-  let right = parens.filter((el) => el === ")");
+    adjacentDigits[digit].push(digit + 3)
+    adjacentDigits[digit].push(digit - 3)
 
-  if (left.length !== right.length) return false;
+    if ([1, 4, 7].includes(digit)) {
+      // First collumn
+      adjacentDigits[digit].push(digit + 1)
+      adjacentDigits[digit] = adjacentDigits[digit].filter(el => el > 0 && el < 10)
+    } else if ([2, 5, 8].includes(digit)) {
+      // Second collumn
+      adjacentDigits[digit].push(digit + 1)
+      adjacentDigits[digit].push(digit - 1)
+      adjacentDigits[digit] = adjacentDigits[digit].filter(el => el > 0 && el < 10)
+    } else if ([3, 6, 9].includes(digit)) {
+      // Third collumn
+      adjacentDigits[digit].push(digit - 1)
+      adjacentDigits[digit] = adjacentDigits[digit].filter(el => el > 0 && el < 10)
+    } else if (digit === 0) {
+      // digit equals 0
+      adjacentDigits[digit].push(8)
+    } else {
+      console.log('Invalid number')
+    }
 
-  if (parens.indexOf("(") > parens.indexOf(")")) return false;
-  if (parens.reverse().indexOf(")") > parens.reverse().indexOf("("))
-    return false;
-
-  while (parens[0] === "(") {
-    parens = parens.slice(1);
-    parens.splice(parens.indexOf(")"), 1);
-    console.log(parens.join(""), parens.length);
+    if (digit === 8) adjacentDigits[digit].push(0);
   }
-  if (parens.length > 0) return false;
 
-  return true;
+
+
+  // console.log(Object.keys(adjacentDigits).length)
+  console.log(adjacentDigits)
+  // console.log(observed)
+
 }
 
-// console.log(validParentheses("("), false);
-// console.log(validParentheses("(())((()())())"), true);
-// console.log(validParentheses("())"), true);
-// console.log(validParentheses(")()()()("), false);
-console.log(validParentheses("())(()"), false);
+// console.log(getPINs('8'), ["5", "7", "8", "9", "0"])
+// console.log(getPINs('11'), ["11", "22", "44", "12", "21", "14", "41", "24", "42"])
+// console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
+////////////////////////////////////////
+// ------------  June 20th   ------------
+function mergeArrays(arr1, arr2) {
+  return arr1.concat(arr2).sort((a, b) => a - b).filter((el, index, arr) => el !== arr[index - 1] && el !== [index + 1]);
+
+}
+
+console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+////////////////////////////////////////
+// ------------  June 19th   ------------
+// function validParentheses(parens) {
+//   // your code here ..
+//   parens = parens.split("");
+
+//   let left = parens.filter((el) => el === "(");
+//   let right = parens.filter((el) => el === ")");
+
+//   if (left.length !== right.length) return false;
+
+//   if (parens.indexOf("(") > parens.indexOf(")")) return false;
+//   if (parens.reverse().indexOf(")") > parens.reverse().indexOf("("))
+//     return false;
+
+//   while (parens[0] === "(") {
+//     parens = parens.slice(1);
+//     parens.splice(parens.indexOf(")"), 1);
+//     console.log(parens.join(""), parens.length);
+//   }
+//   if (parens.length > 0) return false;
+
+//   return true;
+// }
+
+// // console.log(validParentheses("("), false);
+// // console.log(validParentheses("(())((()())())"), true);
+// // console.log(validParentheses("())"), true);
+// // console.log(validParentheses(")()()()("), false);
+// console.log(validParentheses("())(()"), false);
 ////////////////////////////////////////
 // ------------  June 18th   ------------
 // function productFib(prod) {
