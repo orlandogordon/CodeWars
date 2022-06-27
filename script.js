@@ -52,16 +52,23 @@ console.log(getPINs("8"), ["5", "7", "8", "9", "0"]);
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  June 25th   ------------
-function powersOfTwo(n) {
-  let arr = []
-  for (let i = 0; i <= n; i++) {
-    arr.push(2 ** i);
-  }
-  return arr;
+// ------------  June 26th   ------------
+var replaceDots = function (str) {
+  return str.split('.').join('-');
 }
 
-console.log(powersOfTwo(4), [1, 2, 4, 8, 16])
+console.log(replaceDots("one.two.three"), "one-two-three")
+////////////////////////////////////////
+// ------------  June 25th   ------------
+// function powersOfTwo(n) {
+//   let arr = []
+//   for (let i = 0; i <= n; i++) {
+//     arr.push(2 ** i);
+//   }
+//   return arr;
+// }
+
+// console.log(powersOfTwo(4), [1, 2, 4, 8, 16])
 ////////////////////////////////////////
 // ------------  June 24th   ------------
 // function longest(s1, s2) {
