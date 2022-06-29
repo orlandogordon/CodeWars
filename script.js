@@ -47,24 +47,41 @@ function getPINs(observed) {
   // console.log(observed)
 }
 
-console.log(getPINs("8"), ["5", "7", "8", "9", "0"]);
+// console.log(getPINs("8"), ["5", "7", "8", "9", "0"]);
 // console.log(getPINs('11'), ["11", "22", "44", "12", "21", "14", "41", "24", "42"])
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  June 27th   ------------
-function solution(number) {
-  if (number < 0) return 0;
-  let arr = [0];
-  for (let i = 3; i < number; i++) {
-    if (i % 3 === 0 || i % 5 === 0) arr.push(i)
-  }
-  console.log(arr)
-  return arr.reduce((total, currentValue) => currentValue + total)
+// ------------  June 28th   ------------
+function moveZeros(arr) {
+  let counter = 0;
+  arr.forEach((el) => {
+    if (el === 0) counter++;
+  });
+  arr = arr.filter((el) => el !== 0);
+  for (let i = 0; i < counter; i++) arr.push(0);
 
+  return arr;
 }
 
-console.log(solution(10), 23)
+console.log(
+  moveZeros([1, 2, 0, 0, 1, 0, 1, 0, 3, 0, 1]),
+  [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
+);
+////////////////////////////////////////
+// ------------  June 27th   ------------
+// function solution(number) {
+//   if (number < 0) return 0;
+//   let arr = [0];
+//   for (let i = 3; i < number; i++) {
+//     if (i % 3 === 0 || i % 5 === 0) arr.push(i)
+//   }
+//   console.log(arr)
+//   return arr.reduce((total, currentValue) => currentValue + total)
+
+// }
+
+// console.log(solution(10), 23)
 ////////////////////////////////////////
 // ------------  June 26th   ------------
 // var replaceDots = function (str) {
