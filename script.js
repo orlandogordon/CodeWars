@@ -52,8 +52,20 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  June 30th   ------------
+// ------------  July 1st   ------------
 // Solution coming on next push
+function anagrams(word, words) {
+  word = word.split('').sort().join('');
+  let temp = '';
+  let answer = [];
+  for (let i = 0; i < words.length; i++) {
+    temp = words[i].split('').sort().join('');
+    if (word === temp) answer.push(words[i])
+  }
+  return answer;
+}
+
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']), ['aabb', 'bbaa'])
 ////////////////////////////////////////
 // ------------  June 29th   ------------
 // function generateHashtag(str) {
