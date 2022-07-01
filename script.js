@@ -52,26 +52,29 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
+// ------------  June 30th   ------------
+// Solution coming on next push
+////////////////////////////////////////
 // ------------  June 29th   ------------
-function generateHashtag(str) {
-  let hashtag =
-    "#" +
-    str
-      .split(" ")
-      .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
-      .join("");
+// function generateHashtag(str) {
+//   let hashtag =
+//     "#" +
+//     str
+//       .split(" ")
+//       .map((el) => el.charAt(0).toUpperCase() + el.slice(1))
+//       .join("");
 
-  if (hashtag.length > 140 || hashtag.length === 1) return false;
-  return hashtag;
-}
+//   if (hashtag.length > 140 || hashtag.length === 1) return false;
+//   return hashtag;
+// }
 
-console.log(generateHashtag("Codewars is nice"), "#CodewarsIsNice");
-console.log(
-  generateHashtag(
-    "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"
-  ),
-  false
-);
+// console.log(generateHashtag("Codewars is nice"), "#CodewarsIsNice");
+// console.log(
+//   generateHashtag(
+//     "Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat"
+//   ),
+//   false
+// );
 ////////////////////////////////////////
 // ------------  June 28th   ------------
 // function moveZeros(arr) {
