@@ -52,18 +52,33 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 2nd   ------------
-function getCount(str) {
-  let counter = 0;
-  let vowels = ['a', 'e', 'i', 'o', 'u']
-  str = str.split('');
-  str.forEach(el => {
-    if (vowels.includes(el)) counter++
+// ------------  July 3rd   ------------
+function duplicateCount(text) {
+  //...
+  counter = 0;
+  text = text.toLowerCase();
+  letters = text.split('').sort();
+  letters.forEach((el, index, arr) => {
+    if (el !== arr[index - 1] && el === arr[index + 1]) counter++
   })
   return counter;
+
 }
 
-console.log(getCount('abbbeefffggghhoovv'), 5)
+console.log(duplicateCount('aabbccdd33de11'), 3)
+////////////////////////////////////////
+// ------------  July 2nd   ------------
+// function getCount(str) {
+//   let counter = 0;
+//   let vowels = ['a', 'e', 'i', 'o', 'u']
+//   str = str.split('');
+//   str.forEach(el => {
+//     if (vowels.includes(el)) counter++
+//   })
+//   return counter;
+// }
+
+// console.log(getCount('abbbeefffggghhoovv'), 5)
 ////////////////////////////////////////
 // ------------  July 1st   ------------
 // Solution coming on next push
