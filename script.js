@@ -52,23 +52,45 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 4th🎆🎆   ------------
-function findOdd(arr) {
-  arr = arr.sort();
-  let counter = 0;
-  let answer = arr[0];
-  options = arr.filter((el, index, nums) => el !== nums[index + 1]);
-  for (let i = 0; i < options.length; i++) {
-    arr.forEach((el) => {
-      if (el === options[i]) counter++;
-    });
-    if (counter % 2 !== 0) answer = options[i];
+// ------------  July 5th   ------------
+function getMiddle(s) {
+  //Code goes here!
+  s = s.split('')
+  midpoint = s.length / 2;
+  console.log(midpoint)
+  let answer = '';
+
+  if (s.length % 2 === 0) {
+    answer = answer + s[midpoint - 1] + s[midpoint]
+  } else {
+    midpoint = Math.floor(midpoint)
+    answer = answer + s[midpoint]
   }
-  //happy coding!
+
   return answer;
+
 }
 
-console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]), -1);
+console.log(getMiddle('tests'), 'es')
+
+////////////////////////////////////////
+// ------------  July 4th🎆🎆   ------------
+// function findOdd(arr) {
+//   arr = arr.sort();
+//   let counter = 0;
+//   let answer = arr[0];
+//   options = arr.filter((el, index, nums) => el !== nums[index + 1]);
+//   for (let i = 0; i < options.length; i++) {
+//     arr.forEach((el) => {
+//       if (el === options[i]) counter++;
+//     });
+//     if (counter % 2 !== 0) answer = options[i];
+//   }
+//   //happy coding!
+//   return answer;
+// }
+
+// console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]), -1);
 ////////////////////////////////////////
 // ------------  July 3rd   ------------
 // function duplicateCount(text) {
