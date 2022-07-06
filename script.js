@@ -65,13 +65,6 @@ function getMiddle(s) {
   } else {
     midpoint = Math.floor(midpoint)
     answer = answer + s[midpoint]
-  }
-
-  return answer;
-
-}
-
-console.log(getMiddle('tests'), 'es')
 
 ////////////////////////////////////////
 // ------------  July 4th🎆🎆   ------------
