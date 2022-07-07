@@ -52,23 +52,36 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
+// ------------  July 7th   ------------
+function perimeter(n) {
+  let fib = [0, 1];
+  for (let i = 0; i < n; i++) {
+    fib.push(fib[i] + fib[i + 1]);
+  }
+  return 4 * fib.reduce((acc, curr) => acc + curr);
+}
+
+console.log(perimeter(0), 4);
+console.log(perimeter(7), 216);
+console.log(perimeter(30) === 14098308);
+////////////////////////////////////////
 // ------------  July 5th   ------------
 function getMiddle(s) {
   //Code goes here!
-  s = s.split('')
+  s = s.split("");
   midpoint = s.length / 2;
-  console.log(midpoint)
-  let answer = '';
+  console.log(midpoint);
+  let answer = "";
 
   if (s.length % 2 === 0) {
-    answer = answer + s[midpoint - 1] + s[midpoint]
+    answer = answer + s[midpoint - 1] + s[midpoint];
   } else {
-    midpoint = Math.floor(midpoint)
-    answer = answer + s[midpoint]
+    midpoint = Math.floor(midpoint);
+    answer = answer + s[midpoint];
   }
 }
 
-console.log(getMiddle('test'), 'es');
+console.log(getMiddle("test"), "es");
 
 ////////////////////////////////////////
 // ------------  July 4th🎆🎆   ------------
