@@ -52,36 +52,82 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 7th   ------------
-function perimeter(n) {
-  let fib = [0, 1];
-  for (let i = 0; i < n; i++) {
-    fib.push(fib[i] + fib[i + 1]);
-  }
-  return 4 * fib.reduce((acc, curr) => acc + curr);
+// ------------  July 8th   ------------
+function alphabetPosition(text) {
+  alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  return text
+    .split("")
+    .filter((el) => el.toUpperCase() !== el.toLowerCase())
+    .map((el) => {
+      el = el.toLowerCase();
+      return alphabet.findIndex((alph) => alph === el) + 1;
+      // return num + 1;
+    })
+    .join(" ");
 }
 
-console.log(perimeter(0), 4);
-console.log(perimeter(7), 216);
-console.log(perimeter(30) === 14098308);
+console.log(
+  alphabetPosition("The sunset sets at twelve o' clock."),
+  "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+);
+////////////////////////////////////////
+// ------------  July 7th   ------------
+// function perimeter(n) {
+//   let fib = [0, 1];
+//   for (let i = 0; i < n; i++) {
+//     fib.push(fib[i] + fib[i + 1]);
+//   }
+//   return 4 * fib.reduce((acc, curr) => acc + curr);
+// }
+
+// console.log(perimeter(0), 4);
+// console.log(perimeter(7), 216);
+// console.log(perimeter(30) === 14098308);
 ////////////////////////////////////////
 // ------------  July 5th   ------------
-function getMiddle(s) {
-  //Code goes here!
-  s = s.split("");
-  midpoint = s.length / 2;
-  console.log(midpoint);
-  let answer = "";
+// function getMiddle(s) {
+//   //Code goes here!
+//   s = s.split("");
+//   midpoint = s.length / 2;
+//   console.log(midpoint);
+//   let answer = "";
 
-  if (s.length % 2 === 0) {
-    answer = answer + s[midpoint - 1] + s[midpoint];
-  } else {
-    midpoint = Math.floor(midpoint);
-    answer = answer + s[midpoint];
-  }
-}
+//   if (s.length % 2 === 0) {
+//     answer = answer + s[midpoint - 1] + s[midpoint];
+//   } else {
+//     midpoint = Math.floor(midpoint);
+//     answer = answer + s[midpoint];
+//   }
+// }
 
-console.log(getMiddle("test"), "es");
+// console.log(getMiddle("test"), "es");
 
 ////////////////////////////////////////
 // ------------  July 4th🎆🎆   ------------
