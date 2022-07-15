@@ -52,55 +52,67 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 11th   ------------
-function sumOfDivided(lst) {
-  // Confirm a list of ints were given
-  if (lst.length < 1) return [];
-  // Find the integer with greatest abs value
-  const maxInt = lst
-    .map((el) => {
-      if (el < 0) return el * -1;
-      else return el;
-    })
-    .reduce((prev, curr) => (prev < curr ? curr : prev));
-
-  // Find all prime numbers between 0 and the int with largest absolute value
-  let sieve = [],
-    primes = [];
-
-  for (let i = 2; i <= maxInt; i++) {
-    if (!sieve[i]) {
-      primes.push(i);
-      // << operator = i(left opperand) * (2 ** 1(right opperand))
-      // This loop eliminates any multiples of i
-      for (let j = i << 1; j <= maxInt; j += i) {
-        sieve[j] = true;
-      }
-    }
-  }
-
-  // Find which prime numbers are factor(s) of the ints given and calculate sums / push to the answer array
-  let sum = [];
-  let answer = [];
-  primes.forEach((primeNum) => {
-    lst.forEach((int) => {
-      if (int % primeNum === 0) sum.push(int);
-    });
-    if (sum.length > 0) {
-      sum = sum.reduce((acc, curr) => curr + acc);
-      answer.push([primeNum, sum]);
-    }
-    sum = [];
-  });
-
-  return answer;
+// ------------  July 14th   ------------
+function reverseWords(str) {
+  // Go for it
+  return str
+    .split(" ")
+    .map((el) => el.split("").reverse().join(""))
+    .join(" ");
 }
 
-console.log(sumOfDivided([12, 15]), [
-  [2, 12],
-  [3, 27],
-  [5, 15],
-]);
+console.log(reverseWords("apple"), "elppa");
+console.log(reverseWords("double  spaced  words"), "elbuod  decaps  sdrow");
+////////////////////////////////////////
+// ------------  July 11th   ------------
+// function sumOfDivided(lst) {
+//   // Confirm a list of ints were given
+//   if (lst.length < 1) return [];
+//   // Find the integer with greatest abs value
+//   const maxInt = lst
+//     .map((el) => {
+//       if (el < 0) return el * -1;
+//       else return el;
+//     })
+//     .reduce((prev, curr) => (prev < curr ? curr : prev));
+
+//   // Find all prime numbers between 0 and the int with largest absolute value
+//   let sieve = [],
+//     primes = [];
+
+//   for (let i = 2; i <= maxInt; i++) {
+//     if (!sieve[i]) {
+//       primes.push(i);
+//       // << operator = i(left opperand) * (2 ** 1(right opperand))
+//       // This loop eliminates any multiples of i
+//       for (let j = i << 1; j <= maxInt; j += i) {
+//         sieve[j] = true;
+//       }
+//     }
+//   }
+
+//   // Find which prime numbers are factor(s) of the ints given and calculate sums / push to the answer array
+//   let sum = [];
+//   let answer = [];
+//   primes.forEach((primeNum) => {
+//     lst.forEach((int) => {
+//       if (int % primeNum === 0) sum.push(int);
+//     });
+//     if (sum.length > 0) {
+//       sum = sum.reduce((acc, curr) => curr + acc);
+//       answer.push([primeNum, sum]);
+//     }
+//     sum = [];
+//   });
+
+//   return answer;
+// }
+
+// console.log(sumOfDivided([12, 15]), [
+//   [2, 12],
+//   [3, 27],
+//   [5, 15],
+// ]);
 ////////////////////////////////////////
 // ------------  July 10th   ------------
 // function solution(string) {
