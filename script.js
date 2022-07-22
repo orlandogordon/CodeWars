@@ -52,17 +52,32 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 14th   ------------
-function reverseWords(str) {
-  // Go for it
-  return str
-    .split(" ")
-    .map((el) => el.split("").reverse().join(""))
-    .join(" ");
+// ------------  July 21st   ------------
+function maskify(cc) {
+  return cc
+    .split("")
+    .map((el, index) => {
+      if (index < cc.length - 4) return "#";
+      else return el;
+    })
+    .join("");
 }
 
-console.log(reverseWords("apple"), "elppa");
-console.log(reverseWords("double  spaced  words"), "elbuod  decaps  sdrow");
+console.log(maskify("4556364607935616"), "############5616");
+console.log(maskify("1"), "1");
+console.log(maskify("hey there paul"), "##########paul");
+////////////////////////////////////////
+// ------------  July 14th   ------------
+// function reverseWords(str) {
+//   // Go for it
+//   return str
+//     .split(" ")
+//     .map((el) => el.split("").reverse().join(""))
+//     .join(" ");
+// }
+
+// console.log(reverseWords("apple"), "elppa");
+// console.log(reverseWords("double  spaced  words"), "elbuod  decaps  sdrow");
 ////////////////////////////////////////
 // ------------  July 11th   ------------
 // function sumOfDivided(lst) {
