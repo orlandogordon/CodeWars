@@ -52,20 +52,41 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 21st   ------------
-function maskify(cc) {
-  return cc
-    .split("")
-    .map((el, index) => {
-      if (index < cc.length - 4) return "#";
-      else return el;
-    })
-    .join("");
+// ------------  July 23rd   ------------
+function findUniq(arr) {
+  // do magic
+  const length = arr.length;
+  if (arr[0] !== arr[1] && arr[0] !== arr[2]) return arr[0];
+  if (
+    arr[length - 1] !== arr[length - 2] &&
+    arr[length - 1] !== arr[length - 3]
+  )
+    return arr[length - 1];
+
+  return arr.filter(
+    (el, index, arr) => el !== arr[0] && el !== arr[arr.length - 1]
+  )[0];
 }
 
-console.log(maskify("4556364607935616"), "############5616");
-console.log(maskify("1"), "1");
-console.log(maskify("hey there paul"), "##########paul");
+console.log(findUniq([1, 0, 0]), 1);
+console.log(findUniq([0, 1, 0, 0]), 1);
+console.log(findUniq([1, 1, 2, 1, 1]), 2);
+
+////////////////////////////////////////
+// ------------  July 21st   ------------
+// function maskify(cc) {
+//   return cc
+//     .split("")
+//     .map((el, index) => {
+//       if (index < cc.length - 4) return "#";
+//       else return el;
+//     })
+//     .join("");
+// }
+
+// console.log(maskify("4556364607935616"), "############5616");
+// console.log(maskify("1"), "1");
+// console.log(maskify("hey there paul"), "##########paul");
 ////////////////////////////////////////
 // ------------  July 14th   ------------
 // function reverseWords(str) {
