@@ -52,18 +52,41 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  July 28th   ------------
-function removeSmallest(numbers) {
-  let smallest = 0;
-  numbers.forEach((el, index) => {
-    if (el < numbers[smallest]) smallest = index;
-  });
-  numbers.splice(smallest, 1);
-  return numbers;
-}
+// ------------  July 31st   ------------
+////////////////////////////////////////
+// ------------  July 30th   ------------
+// function firstNonRepeatingLetter(s) {
+//   s = s.split("");
+//   let options = [...s].map((el) => el.toLowerCase());
+//   console.log(options, s);
+//   options = options
+//     .sort((a, b) => a.localeCompare(b))
+//     .filter((el, index, arr) => el !== arr[index - 1] && el !== arr[index + 1])
+//     .map((el) =>
+//       s.indexOf(el) < 0 ? s.indexOf(el.toUpperCase()) : s.indexOf(el)
+//     )
+//     .sort((a, b) => a - b);
+//   if (options.length === 0) return "";
+//   return s[options[0]];
+// }
 
-console.log(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5]);
-console.log(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1]);
+// console.log(firstNonRepeatingLetter("aa"), "a");
+// console.log(firstNonRepeatingLetter("stress"), "t");
+// console.log(firstNonRepeatingLetter("sTress"), "t");
+// console.log(firstNonRepeatingLetter("moonmen"), "e");
+////////////////////////////////////////
+// ------------  July 28th   ------------
+// function removeSmallest(numbers) {
+//   let smallest = 0;
+//   numbers.forEach((el, index) => {
+//     if (el < numbers[smallest]) smallest = index;
+//   });
+//   numbers.splice(smallest, 1);
+//   return numbers;
+// }
+
+// console.log(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5]);
+// console.log(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1]);
 ////////////////////////////////////////
 // ------------  July 25th   ------------
 // Linked List Practice
