@@ -52,49 +52,81 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
+// ------------  August 1st   -----------
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.filter((el) => el === true).length;
+}
+var array1 = [
+  true,
+  true,
+  true,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  false,
+  true,
+  true,
+];
+console.log(countSheeps(array1), 17);
+////////////////////////////////////////
 // ------------  July 31st   ------------
-class Node {
-  constructor(data = 5, next = null) {
-    this.data = data;
-    this.next = next;
-  }
-  setNext(node) {
-    this.next = node;
-  }
-  getNext() {
-    return this.next;
-  }
-}
+// class Node {
+//   constructor(data = 5, next = null) {
+//     this.data = data;
+//     this.next = next;
+//   }
+//   setNext(node) {
+//     this.next = node;
+//   }
+//   getNext() {
+//     return this.next;
+//   }
+// }
 
-function loop_size(node) {
-  let node2 = node.next;
-  let loopSize = 1;
+// function loop_size(node) {
+//   let node2 = node.next;
+//   let loopSize = 1;
 
-  while (node !== node2) {
-    if (node.next === null) return 0;
-    node = node.next;
-    node2 = node2.next.next;
-  }
-  node2 = node2.next;
-  while (node !== node2) {
-    node2 = node2.next;
-    loopSize++;
-  }
+//   while (node !== node2) {
+//     if (node.next === null) return 0;
+//     node = node.next;
+//     node2 = node2.next.next;
+//   }
+//   node2 = node2.next;
+//   while (node !== node2) {
+//     node2 = node2.next;
+//     loopSize++;
+//   }
 
-  return loopSize;
-}
+//   return loopSize;
+// }
 
-const A = new Node(),
-  B = new Node(),
-  C = new Node();
-A.setNext(B), B.setNext(C), C.setNext(A);
-console.log(loop_size(A), 3);
+// const A = new Node(),
+//   B = new Node(),
+//   C = new Node();
+// A.setNext(B), B.setNext(C), C.setNext(A);
+// console.log(loop_size(A), 3);
 
-const D = new Node(),
-  E = new Node(),
-  F = new Node();
-D.setNext(E), E.setNext(F), F.setNext(E);
-console.log(loop_size(D), 2);
+// const D = new Node(),
+//   E = new Node(),
+//   F = new Node();
+// D.setNext(E), E.setNext(F), F.setNext(E);
+// console.log(loop_size(D), 2);
 ////////////////////////////////////////
 // ------------  July 30th   ------------
 // function firstNonRepeatingLetter(s) {
