@@ -52,19 +52,30 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  August 2nd   -----------
-function abbrevName(name) {
-  return name
+// ------------  August 3rd   -----------
+function digitize(n) {
+  return n
+    .toString()
     .split("")
-    .filter(
-      (el, index, arr) => arr[index - 1] === undefined || arr[index - 1] === " "
-    )
-    .join(".")
-    .toUpperCase();
+    .reverse()
+    .map((el) => +el);
 }
 
-console.log(abbrevName("Sam Harris"), "S.H");
-console.log(abbrevName("P favuzzi"), "P.F");
+console.log(digitize(35231), [1, 3, 2, 5, 3]);
+////////////////////////////////////////
+// ------------  August 2nd   -----------
+// function abbrevName(name) {
+//   return name
+//     .split("")
+//     .filter(
+//       (el, index, arr) => arr[index - 1] === undefined || arr[index - 1] === " "
+//     )
+//     .join(".")
+//     .toUpperCase();
+// }
+
+// console.log(abbrevName("Sam Harris"), "S.H");
+// console.log(abbrevName("P favuzzi"), "P.F");
 ////////////////////////////////////////
 // ------------  August 1st   -----------
 // function countSheeps(arrayOfSheep) {
