@@ -52,16 +52,33 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  August 3rd   -----------
-function digitize(n) {
-  return n
-    .toString()
-    .split("")
-    .reverse()
-    .map((el) => +el);
-}
+// ------------  August 4th   -----------
+String.prototype.camelCase = function () {
+  return this.split(" ")
+    .map((el) => {
+      if (el === "") return el;
+      el = el.split("");
+      el[0] = el[0].toUpperCase();
+      return el.join("");
+    })
+    .join("");
+};
 
-console.log(digitize(35231), [1, 3, 2, 5, 3]);
+console.log("test case".camelCase(), "TestCase");
+console.log("camel case word".camelCase(), "CamelCaseWord");
+console.log("".camelCase(), "");
+
+////////////////////////////////////////
+// ------------  August 3rd   -----------
+// function digitize(n) {
+//   return n
+//     .toString()
+//     .split("")
+//     .reverse()
+//     .map((el) => +el);
+// }
+
+// console.log(digitize(35231), [1, 3, 2, 5, 3]);
 ////////////////////////////////////////
 // ------------  August 2nd   -----------
 // function abbrevName(name) {
