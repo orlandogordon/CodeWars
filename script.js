@@ -52,21 +52,41 @@ function getPINs(observed) {
 // console.log(getPINs('369'), ["339", "366", "399", "658", "636", "258", "268", "669", "668", "266", "369", "398", "256", "296", "259", "368", "638", "396", "238", "356", "659", "639", "666", "359", "336", "299", "338", "696", "269", "358", "656", "698", "699", "298", "236", "239"])
 
 ////////////////////////////////////////
-// ------------  August 4th   -----------
-String.prototype.camelCase = function () {
-  return this.split(" ")
-    .map((el) => {
-      if (el === "") return el;
-      el = el.split("");
-      el[0] = el[0].toUpperCase();
-      return el.join("");
-    })
-    .join("");
-};
+// ------------  August 5th   -----------
+function last(x) {
+  return x.split(" ").sort((a, b) => {
+    a = a.charAt(a.length - 1);
+    b = b.charAt(b.length - 1);
+    return a.localeCompare(b);
+  });
+}
 
-console.log("test case".camelCase(), "TestCase");
-console.log("camel case word".camelCase(), "CamelCaseWord");
-console.log("".camelCase(), "");
+console.log(last("what time are we climbing up the volcano"), [
+  "time",
+  "are",
+  "we",
+  "the",
+  "climbing",
+  "volcano",
+  "up",
+  "what",
+]);
+////////////////////////////////////////
+// ------------  August 4th   -----------
+// String.prototype.camelCase = function () {
+//   return this.split(" ")
+//     .map((el) => {
+//       if (el === "") return el;
+//       el = el.split("");
+//       el[0] = el[0].toUpperCase();
+//       return el.join("");
+//     })
+//     .join("");
+// };
+
+// console.log("test case".camelCase(), "TestCase");
+// console.log("camel case word".camelCase(), "CamelCaseWord");
+// console.log("".camelCase(), "");
 
 ////////////////////////////////////////
 // ------------  August 3rd   -----------
