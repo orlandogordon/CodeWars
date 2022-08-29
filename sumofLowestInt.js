@@ -25,4 +25,3 @@ function sumTwoSmallestNumbers(numbers) {
 }
 
 console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77]) === 7);
-console.log(sumTwoSmallestNumbers([19, 5, 42, 2, 77]) === 7);
